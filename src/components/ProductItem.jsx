@@ -15,6 +15,7 @@ function ProductItem({ product }) {
                     alt="..."
                     className="mx-auto p-3 h-52 w-56 cursor-pointer"
                     style={{ maxWidth: '200px', maxHeight: '200px' }}
+                    loading="lazy"
                 />
                 <div>
                     <h5 className="line-clamp-1 text-[18px] font-semibold">{product.title}</h5>
