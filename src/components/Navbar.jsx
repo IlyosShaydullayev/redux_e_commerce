@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 
 function Navbar() {
     return (
-        <div className="bg-white py-3 sticky top-0 shadow">
+        <div className="bg-white py-3 sticky z-10 top-0 shadow-lg">
             <div className="mx-auto flex items-center justify-between px-8">
                 <Link to='/' className="text-xl font-bold px-2">
                     My Ecommerce
                 </Link>
                 <div className="lg:flex lg:items-center">
-                    <ul className="flex flex-col lg:flex-row lg:space-x-4 text-center">
+                    <ul className="flex flex-col lg:flex-row lg:space-x-16 text-center">
                         <li>
                             <Link to='/'>Home</Link>
                         </li>

@@ -3,7 +3,7 @@ import './App.css'
 import { Home } from './pages';
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_relativeSplatPath: true }}>
             <Routes>
                 <Route path='/' element={<Home />} />
             </Routes>

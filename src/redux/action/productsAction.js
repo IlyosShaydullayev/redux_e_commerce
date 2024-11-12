@@ -1,9 +1,9 @@
 import axios from "axios"
 
-export const getAllProducts = () => async (dispatch) => {
+export const getAllProducts = (filter) => async (dispatch) => {
     dispatch({ type: "PRODUCTS_LOADING" })
 
-    const productURL = 'https://fakestoreapi.com/products'
+    const productURL =  'https://fakestoreapi.com/products'
 
     try {
         const { data, status } = await axios.get(productURL)
