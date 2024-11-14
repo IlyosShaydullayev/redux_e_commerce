@@ -31,3 +31,20 @@ export const getSingleProduct = (id) => async (dispatch) => {
         dispatch({ type: "SINGLE_PRODUCT_FAILED", error: error.message })
     }
 }
+
+export const getRecommendProducts = (category) => async (dispatch) => {
+    dispatch({ type: "RECOMMEND_PRODUCT_LOADING" })
+
+    const productURL = `https://fakestoreapi.com/products/category/${category}`
+
+    try {
+        const { data, status } = await axios.get(productURL)
+
+        if (status === 200) {
+            dispatch({ type: "RECOMMEND_PRODUCT_SUCCESS", payload: data })
+        }
+
+    } catch (error) {
+        dispatch({ type: "RECOMMEND_PRODUCT_FAILED", error: error.message })
+    }
+}

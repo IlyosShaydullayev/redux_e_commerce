@@ -10,6 +10,12 @@ const initialStateSingleProduct = {
     error: null
 }
 
+const initialStateRecommendProduct = {
+    loading: false,
+    recommendProducts: [],
+    error: null
+}
+
 export const productsReducer = (state = initialStateAllProducts, action) => {
     switch (action.type) {
         case "PRODUCTS_LOADING":
@@ -54,6 +60,31 @@ export const singleProductReducer = (state = initialStateSingleProduct, action) 
                 loading: false,
                 error: action.error
             }
+        default:
+            return state
+    }
+}
+
+export const recommendProductReducer = (state = initialStateRecommendProduct, action) => {
+    switch (action.type) {
+        case "RECOMMEND_PRODUCT_LOADING":
+            return {
+                ...state,
+                loading: true
+            }
+        case "RECOMMEND_PRODUCT_SUCCESS":
+            return {
+                ...state,
+                loading: false,
+                recommendProducts: action.payload
+            }
+        case 'RECOMMEND_PRODUCT_FAILED':
+            return {
+                ...state,
+                loading: false,
+                error: action.error
+            }
+
         default:
             return state
     }
