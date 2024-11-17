@@ -89,7 +89,7 @@ function Login() {
                                     </label>
                                     <div className='flex items-center mt-1'>
                                         <input
-                                            type="number"
+                                            type="text"
                                             id='password'
                                             name='password'
                                             value={formik.values.password}
