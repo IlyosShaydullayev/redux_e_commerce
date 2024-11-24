@@ -48,3 +48,17 @@ export const getRecommendProducts = (category) => async (dispatch) => {
         dispatch({ type: "RECOMMEND_PRODUCT_FAILED", error: error.message })
     }
 }
+
+export const addToCart = (product) => (dispatch) => {
+    dispatch({ type: "ADD_TO_CART", payload: product })
+}
+
+export const incrementProductItem = (id) => (dispatch) => {
+    dispatch({ type: "INCREASE_PRODUCT_ITEM", payload: id });
+};
+export const decrementProductItem = (id) => (dispatch) => {
+    dispatch({ type: "DECREMENT_PRODUCT_ITEM", payload: id });
+};
+export const removeProductItem = (id) => (dispatch) => {
+    dispatch({ type: "REMOVE_PRODUCT_ITEM", payload: id });
+};

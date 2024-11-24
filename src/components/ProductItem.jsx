@@ -1,12 +1,14 @@
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
+import { addToCart } from "../redux/action/productsAction"
 
 function ProductItem({ product }) {
     const dispatch = useDispatch()
 
     const handleAddToCart = (prodItem) => {
-        // dispatch(addToCart(prodItem))
+        dispatch(addToCart(prodItem))
     }
+
     return (
         <div>
             <div className="p-3 border-2 rounded-xl">
